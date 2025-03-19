@@ -1,0 +1,646 @@
+<?xml version="1.0" ?>
+<activity_report>
+    <github_activity>
+        <commit>
+            <sha>f06d67667d240713f3190908d04ee937843b86f1</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-14T03:19:15</date>
+            <message>Update config.json\n\nfixed errors with account metadata</message>
+            <url>https://github.com/Plative/plaito/commit/f06d67667d240713f3190908d04ee937843b86f1</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/salesforce_sql_export/config.json</filename>
+                    <additions>4</additions>
+                    <deletions>2</deletions>
+                    <changes>6</changes>
+                    <status>modified</status>
+                    <diff>@@ -80,11 +80,13 @@\n                 },\n                 &amp;quot;CompanyEmployeeCount&amp;quot;:{\n                     &amp;quot;Description&amp;quot;: &amp;quot;Number of employees in the account&amp;quot;,\n-                    &amp;quot;SQLDataType&amp;quot;: &amp;quot;INT&amp;quot;\n+                    &amp;quot;SQLDataType&amp;quot;: &amp;quot;INT&amp;quot;,\n+                    &amp;quot;Orig_Field_Name&amp;quot;: &amp;quot;NumberOfEmployees&amp;quot;\n                 },\n                 &amp;quot;CompanyRevenue&amp;quot;:{\n                     &amp;quot;Description&amp;quot;: &amp;quot;The company&amp;#x27;s annual revenue&amp;quot;,\n-                    &amp;quot;SQLDataType&amp;quot;: &amp;quot;FLOAT&amp;quot;\n+                    &amp;quot;SQLDataType&amp;quot;: &amp;quot;FLOAT&amp;quot;,\n+                    &amp;quot;Orig_Field_Name&amp;quot;: &amp;quot;AnnualRevenue&amp;quot;\n                 },\n                 &amp;quot;CompanySize&amp;quot;:{\n                     &amp;quot;Description&amp;quot;: &amp;quot;Size of the account in terms of global presence. Example is &amp;#x27;Mid-Market: 250-1000&amp;#x27;&amp;quot;,</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>0bf6653511e092ace35bdea32a42c62d1297807b</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-14T03:16:54</date>
+            <message>Update config.json\n\nrefined account metadata</message>
+            <url>https://github.com/Plative/plaito/commit/0bf6653511e092ace35bdea32a42c62d1297807b</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/salesforce_sql_export/config.json</filename>
+                    <additions>7</additions>
+                    <deletions>3</deletions>
+                    <changes>10</changes>
+                    <status>modified</status>
+                    <diff>@@ -66,7 +66,7 @@\n                     &amp;quot;SQLDataType&amp;quot;: &amp;quot;TINYTEXT&amp;quot;\n                 },\n                 &amp;quot;Closed_Won_Amount&amp;quot;:{\n-                    &amp;quot;Description&amp;quot;: &amp;quot;Value of all closed won opportunities for this account. Use this to get a sense of the account&amp;#x27;s lifetime value, LTV, bookings, sales or revenue.&amp;quot;,\n+                    &amp;quot;Description&amp;quot;: &amp;quot;Value of all closed won opportunities for this account. Use this to get a sense of the account&amp;#x27;s lifetime value, LTV, bookings, sales, revenue or overall size at Plative.&amp;quot;,\n                     &amp;quot;Orig_Field_Name&amp;quot;: &amp;quot;Closed_Won_Opps__c&amp;quot;,\n                     &amp;quot;SQLDataType&amp;quot;: &amp;quot;FLOAT&amp;quot;\n                 },\n@@ -78,11 +78,15 @@\n                     &amp;quot;Description&amp;quot;: &amp;quot;Description of the account&amp;quot;,\n                     &amp;quot;SQLDataType&amp;quot;: &amp;quot;TEXT&amp;quot;\n                 },\n-                &amp;quot;NumberOfEmployees&amp;quot;:{\n+                &amp;quot;CompanyEmployeeCount&amp;quot;:{\n                     &amp;quot;Description&amp;quot;: &amp;quot;Number of employees in the account&amp;quot;,\n                     &amp;quot;SQLDataType&amp;quot;: &amp;quot;INT&amp;quot;\n         ... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>dc94c8df138a9a8d6fd274efe5d2eb9637998ba2</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-14T03:11:41</date>
+            <message>Update config.json\n\nupdated Account filter to be more inclusive and include all accounts with opportunities.</message>
+            <url>https://github.com/Plative/plaito/commit/dc94c8df138a9a8d6fd274efe5d2eb9637998ba2</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/salesforce_sql_export/config.json</filename>
+                    <additions>2</additions>
+                    <deletions>6</deletions>
+                    <changes>8</changes>
+                    <status>modified</status>
+                    <diff>@@ -66,7 +66,7 @@\n                     &amp;quot;SQLDataType&amp;quot;: &amp;quot;TINYTEXT&amp;quot;\n                 },\n                 &amp;quot;Closed_Won_Amount&amp;quot;:{\n-                    &amp;quot;Description&amp;quot;: &amp;quot;Value of all closed won opportunities for this account&amp;quot;,\n+                    &amp;quot;Description&amp;quot;: &amp;quot;Value of all closed won opportunities for this account. Use this to get a sense of the account&amp;#x27;s lifetime value, LTV, bookings, sales or revenue.&amp;quot;,\n                     &amp;quot;Orig_Field_Name&amp;quot;: &amp;quot;Closed_Won_Opps__c&amp;quot;,\n                     &amp;quot;SQLDataType&amp;quot;: &amp;quot;FLOAT&amp;quot;\n                 },\n@@ -82,10 +82,6 @@\n                     &amp;quot;Description&amp;quot;: &amp;quot;Number of employees in the account&amp;quot;,\n                     &amp;quot;SQLDataType&amp;quot;: &amp;quot;INT&amp;quot;\n                 },\n-                &amp;quot;AnnualRevenue&amp;quot;:{\n-                    &amp;quot;Description&amp;quot;: &amp;quot;Annual revenue of the account&amp;quot;,\n-                    &amp;quot;SQLDataType&amp;quot;: &amp;quot;FLOAT&amp;quot;\n-                },\n                 &amp;quot;Size&amp;quot;:{\n                     &amp;quot;Description&amp;quot;: &amp;quot;Size of the account in terms of global presence. Example is &amp;#x27;Mid-Market: 250-1000&amp;#x27;&amp;quot;,\n... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>97d814b8f7ae59f7ebf02a153d4ff0ec6bde593d</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-10T22:36:08</date>
+            <message>Update apollo_enrichment.py\n\nbug fix: view_organization_profile method was changed in a previous release from staticmethod to instance method, but some calls were still treated like staticmethod</message>
+            <url>https://github.com/Plative/plaito/commit/97d814b8f7ae59f7ebf02a153d4ff0ec6bde593d</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/integrations/apollo_enrichment.py</filename>
+                    <additions>10</additions>
+                    <deletions>10</deletions>
+                    <changes>20</changes>
+                    <status>modified</status>
+                    <diff>@@ -102,7 +102,7 @@ def view_account_profile(self, account_id: str):\n             organization_id = account_data[&amp;quot;organization_id&amp;quot;]\n \n             # now that we have the organization id, we can get the organization data\n-            ApolloEnrichment.view_organization_profile(organization_id=organization_id, output_to_slack=True)\n+            self.view_organization_profile(organization_id=organization_id, output_to_slack=True)\n \n         except Exception as e:\n             PlaitoTools.print_debug(f&amp;quot;ERROR: ApolloEnrichment.view_account_profile() - Failed to retrieve account profile for account_id={account_id}. Error={e}&amp;quot;)\n@@ -151,7 +151,7 @@ def get_organization_blocks(self, organization_data):\n                 org_sf_account_id = organization_data[&amp;#x27;account&amp;#x27;][&amp;#x27;salesforce_id&amp;#x27;]\n                 org_sf_account_name = organization_data[&amp;#x27;account&amp;#x27;][&amp;#x27;name&amp;#x27;] if &amp;#x27;name&amp;#x27; in organization_data[&amp;#x27;account&amp;#x27;] else &amp;quot;Unknown&amp;quot;\n                 org_sf_account_link = f&amp;quot;&amp;lt;https://plative.lightning.force.com/ligh... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>c391c226c56cdcbcc7b806948b69e470e3927647</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-10T16:59:01</date>
+            <message>Update proxycurl_enrichment.py\n\nadded funding_data, exit_date and acquisitions data to linkedin api call</message>
+            <url>https://github.com/Plative/plaito/commit/c391c226c56cdcbcc7b806948b69e470e3927647</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/integrations/proxycurl_enrichment.py</filename>
+                    <additions>3</additions>
+                    <deletions>0</deletions>
+                    <changes>3</changes>
+                    <status>modified</status>
+                    <diff>@@ -180,6 +180,9 @@ def get_linkedin_profile(self, linkedin_url: str, use_cache: bool = True):\n             params = {\n                 &amp;#x27;url&amp;#x27;: extracted_linkedin_url,\n                 &amp;quot;extra&amp;quot;: &amp;quot;include&amp;quot;,\n+                &amp;quot;funding_data&amp;quot;: &amp;quot;include&amp;quot;,\n+                &amp;quot;exit_data&amp;quot;: &amp;quot;include&amp;quot;,\n+                &amp;quot;acquisitions&amp;quot;: &amp;quot;include&amp;quot;,\n                 &amp;#x27;use_cache&amp;#x27;: &amp;#x27;if-recent&amp;#x27;,\n                 &amp;#x27;fallback_to_cache&amp;#x27;: &amp;#x27;on-error&amp;#x27;\n             }</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>fce38a31d75a8f19fed9bd7e39a679f20d602d7a</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-10T14:46:09</date>
+            <message>Update apollo_enrichment.py\n\nfixed bug whereby we were not able to display apollo org info on slack after retrieval from apollo org cache</message>
+            <url>https://github.com/Plative/plaito/commit/fce38a31d75a8f19fed9bd7e39a679f20d602d7a</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/integrations/apollo_enrichment.py</filename>
+                    <additions>7</additions>
+                    <deletions>3</deletions>
+                    <changes>10</changes>
+                    <status>modified</status>
+                    <diff>@@ -298,12 +298,17 @@ def view_organization_profile(self, organization_id: str=None, domain: str=None,\n                 response = self.slack_helper.post_slack_block(channel_id=self.channel_id, message=message, user_id=self.user_id, type=&amp;#x27;chat_postMessage&amp;#x27;)\n                 self.thread_ts = response[&amp;#x27;ts&amp;#x27;]\n \n+\n             # first check the cache for the organization data\n             if use_cache:\n                 PlaitoTools.print_debug(f&amp;quot;INFO: ApolloEnrichment.view_organization_profile() - Checking cache for organization_id={organization_id} and domain={domain}&amp;quot;)\n                 organization_data = ApolloEnrichment.get_cached_apollo_org_data(organization_id=organization_id, domain=domain)\n \n-            if not organization_data:\n+            org_blocks = []\n+            if organization_data:\n+                org_blocks = self.get_organization_blocks(organization_data)\n+\n+            else:\n                 # if no organization_id is provided, then search for the organization_id using... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>3e49276f81081bc928ffab3f21c97ca3135cba74</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-06T18:01:07</date>
+            <message>Update config.json\n\nadded Product_Cart to Opportunity object</message>
+            <url>https://github.com/Plative/plaito/commit/3e49276f81081bc928ffab3f21c97ca3135cba74</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/salesforce_sql_export/config.json</filename>
+                    <additions>6</additions>
+                    <deletions>1</deletions>
+                    <changes>7</changes>
+                    <status>modified</status>
+                    <diff>@@ -360,6 +360,11 @@\n                     &amp;quot;Orig_Field_Name&amp;quot;: &amp;quot;Synopsis__c&amp;quot;,\n                     &amp;quot;SQLDataType&amp;quot;: &amp;quot;TEXT&amp;quot;\n                 },\n+                &amp;quot;Product_Cart&amp;quot;: {\n+                    &amp;quot;Description&amp;quot;: &amp;quot;List of Salesforce products and services that are part of the opportunity&amp;quot;,\n+                    &amp;quot;Orig_Field_Name&amp;quot;: &amp;quot;SFDC_Product_Cart__c&amp;quot;,\n+                    &amp;quot;SQLDataType&amp;quot;: &amp;quot;TEXT&amp;quot;\n+                },\n                 &amp;quot;Assumptions&amp;quot;: {\n                     &amp;quot;Description&amp;quot;: &amp;quot;List of assumptions made in the scoping and sizing of the opportunity. If you&amp;#x27;re interested in understanding the sope and assumptions on the opportunity, this is one of the fields to review.&amp;quot;,\n                     &amp;quot;Orig_Field_Name&amp;quot;: &amp;quot;Assumptions__c&amp;quot;,\n@@ -380,7 +385,7 @@\n                     &amp;quot;SQLDataType&amp;quot;: &amp;quot;DATE&amp;quot;\n                 }\n             },\n-            &amp;quot;SOQL&amp;quot;: &amp;quot;SELECT Id, Name, Account.Name, Account_Tier__c, Project_Rank__c, StageName, CloseDate, Forecast_Color_Code__c, Amount_In_USD__c, Total_Hours__c,... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>7d8a3621899fc6e1c80af0d7f11d3d37b7e973eb</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-05T00:15:51</date>
+            <message>Update plaito_config.json\n\nrefined system prompt as it was generating superfluous bullet points</message>
+            <url>https://github.com/Plative/plaito/commit/7d8a3621899fc6e1c80af0d7f11d3d37b7e973eb</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/plaito_config.json</filename>
+                    <additions>1</additions>
+                    <deletions>1</deletions>
+                    <changes>2</changes>
+                    <status>modified</status>
+                    <diff>@@ -251,7 +251,7 @@\n \n         &amp;quot;repo_code_review_prompt&amp;quot;:&amp;quot;*CODE OVERVIEW*\nDescribe the number and types of code files analyzed and their purpose and intent.\n*SUMMARY FEEDBACK*\nProvide a summary bullet point list of code review feedback\n\n&amp;quot;,\n \n-        &amp;quot;system_prompt&amp;quot;: &amp;quot;Your name is Plaito. You are a generative AI assistant supporting employees of Plative, a top Salesforce and Oracle Netsuite consultancy. As an assistant, you&amp;#x27;re here to answer questions in a factual and friendly way. \n\nWhen responding, do NOT use markdown formatting. Instead, please use slack formatting. If you need to produce a bullet point list, prefix each list item text with &amp;#x27;• &amp;#x27;. Do NOT bold the entire response. Format any dollar values as $###,###.##.&amp;quot;,\n+        &amp;quot;system_prompt&amp;quot;: &amp;quot;Your name is Plaito. You are a generative AI assistant supporting employees of Plative, a top Salesforce and Oracle Netsuite consultancy. As an assistant, you&amp;#x27;re here to answer questions in a factual and friendly way. \n\nPlease str... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>15c7776d47cb9df4ad82273cfb2688307580acfc</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-04T16:59:24</date>
+            <message>Update main.py\n\nbug fix on get_file_attachments_text() call</message>
+            <url>https://github.com/Plative/plaito/commit/15c7776d47cb9df4ad82273cfb2688307580acfc</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/main.py</filename>
+                    <additions>1</additions>
+                    <deletions>1</deletions>
+                    <changes>2</changes>
+                    <status>modified</status>
+                    <diff>@@ -1411,7 +1411,7 @@ def process_slack_request(request_type, payload):\n     global REQUESTED_MODEL_ID \n     REQUESTED_MODEL_ID = None\n \n-    file_attachment_text = get_file_attachments_text(payload) if &amp;#x27;files&amp;#x27; in payload[&amp;#x27;event&amp;#x27;] else &amp;quot;&amp;quot;\n+    file_attachment_text = get_file_attachments_text(payload) if &amp;#x27;event&amp;#x27; in payload and &amp;#x27;files&amp;#x27; in payload[&amp;#x27;event&amp;#x27;] else &amp;quot;&amp;quot;\n \n     if request_type == &amp;#x27;app_home_opened&amp;#x27;:\n         # Parse the command inputs</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>89ad2844916df212aede03b18ad25e0d395bc30b</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-04T12:47:55</date>
+            <message>Update plaitotools.py\n\nadded support for get_text_from_docx_blob(), get_text_from_pptx_blob() and get_text_from_xlsx_blob() to support file attachments</message>
+            <url>https://github.com/Plative/plaito/commit/89ad2844916df212aede03b18ad25e0d395bc30b</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/plaitotools.py</filename>
+                    <additions>56</additions>
+                    <deletions>0</deletions>
+                    <changes>56</changes>
+                    <status>modified</status>
+                    <diff>@@ -13,6 +13,8 @@\n import xml.etree.ElementTree as XML\n import pymupdf4llm\n from pymupdf import Document as PDFDocument\n+from pptx import Presentation\n+import openpyxl\n \n class PlaitoTools:\n     &amp;quot;&amp;quot;&amp;quot;\n@@ -784,6 +786,60 @@ def get_text_from_docx_blob(docx_blob, file_type):\n             PlaitoTools.print_debug(f&amp;quot;ERROR: get_text_from_docx_blob failed with error: {e}&amp;quot;)\n             return None\n \n+    @staticmethod\n+    def get_text_from_docx_blob(file_blob):\n+        try:\n+            file_blob.seek(0)\n+            doc = docx.Document(file_blob)\n+            text_content = &amp;#x27;\n&amp;#x27;.join([paragraph.text for paragraph in doc.paragraphs])\n+\n+            return text_content\n+        except Exception as error:\n+            PlaitoTools.print_debug(f&amp;quot;An error occurred retreiving docx text: {error}&amp;quot;)\n+            return None\n+\n+    @staticmethod\n+    def get_text_from_pptx_blob(file_blob):\n+        try:\n+            file_blob.seek(0)\n+            ppt = Presentation(file_blob)\n+            text_content =... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>f6f10ac6883452298e458e96d1b4c3b91fa26c83</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-04T12:46:07</date>
+            <message>Update main.py\n\n1. added support for document file attachments (pdf, docx, txt, csv, etc)
+\n2. suppressed &amp;#x27;New Assistant Tread&amp;#x27; message from assistant
+\n3. Stopped reassigning model to xlarge whenever there is context cache -- this is to prevent model override for gsearch</message>
+            <url>https://github.com/Plative/plaito/commit/f6f10ac6883452298e458e96d1b4c3b91fa26c83</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/main.py</filename>
+                    <additions>78</additions>
+                    <deletions>34</deletions>
+                    <changes>112</changes>
+                    <status>modified</status>
+                    <diff>@@ -729,14 +729,7 @@ def get_text_from_pptx(doc_id, service):\n             PlaitoTools.print_debug(&amp;quot;Gdrive pptx Download progress: %d%%&amp;quot; % int(status.progress() * 100))\n \n         file.seek(0)\n-        ppt = Presentation(file)\n-        text_content = &amp;quot;&amp;quot;\n-\n-        for slide in ppt.slides:\n-            for shape in slide.shapes:\n-                if hasattr(shape, &amp;quot;text&amp;quot;):\n-                    text_content += shape.text + &amp;quot;\n&amp;quot;\n-\n+        text_content = PlaitoTools.get_text_from_pptx(file_blob=file)\n         return text_content\n     except HttpError as error:\n         PlaitoTools.print_debug(f&amp;quot;An error occurred retreiving gdrive pptx: {error}&amp;quot;)\n@@ -1348,6 +1341,62 @@ def post_to_slack_thread_with_csv(channel_id, thread_ts, message, csv_content, s\n         PlaitoTools.print_debug(f&amp;#x27;ERROR: Error posting message: {e}&amp;#x27;)\n         return f&amp;#x27;ERROR: Error posting message: {e}&amp;#x27;\n                 \n+def get_file_attachments_text(payload): \n+    &amp;quot;&amp;quot;&amp;quot;\n+    Iterate through each file attachment in the payl... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>026888f9b4cd4899dd84613223adf84764a2a01e</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-04T01:59:51</date>
+            <message>Update llm_query.py\n\nadded thought_process section to perplexity output, and refactored citations logic</message>
+            <url>https://github.com/Plative/plaito/commit/026888f9b4cd4899dd84613223adf84764a2a01e</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/llm_query.py</filename>
+                    <additions>20</additions>
+                    <deletions>8</deletions>
+                    <changes>28</changes>
+                    <status>modified</status>
+                    <diff>@@ -120,14 +120,28 @@ def invoke_llm(ai_question: list[HumanMessage|AIMessage|SystemMessage|ToolMessag\n                 chatllm = chatllm.bind_tools(tools=tools)\n                     \n             ai_message = chatllm.invoke(ai_question)\n+            result = ai_message.content\n \n-            # perplexity AI returns citations in the response; others do not\n             citations, citations_text = None, None\n-            if model[&amp;quot;provider&amp;quot;] == &amp;quot;Perplexity&amp;quot; and &amp;#x27;citations&amp;#x27; in ai_message.additional_kwargs:\n-                citations = ai_message.additional_kwargs[&amp;#x27;citations&amp;#x27;]\n-                citations_text = [f&amp;quot;[{index+1}] {citation}&amp;quot; for index, citation in enumerate(citations)]\n-\n-            result = ai_message.content if not citations else ai_message.content + &amp;quot;\n\n*`Citations:`*\n&amp;quot; + &amp;#x27;\n&amp;#x27;.join(citations_text)\n+            perplexity_thought_process = &amp;quot;&amp;quot;\n+            if model[&amp;quot;provider&amp;quot;] == &amp;quot;Perplexity&amp;quot;:\n+                # perplexity AI returns citations in the response; others do no... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>5f642e449b18c9068e756fd9b6e6e1be1fe8deeb</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-04T01:43:51</date>
+            <message>Update plaito_config.json\n\nadded perplexity reasoning models and switched gsearch from perplexity-sonar-pro to perplexity-reasoning-pro</message>
+            <url>https://github.com/Plative/plaito/commit/5f642e449b18c9068e756fd9b6e6e1be1fe8deeb</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/plaito_config.json</filename>
+                    <additions>18</additions>
+                    <deletions>2</deletions>
+                    <changes>20</changes>
+                    <status>modified</status>
+                    <diff>@@ -23,7 +23,7 @@\n             &amp;quot;fast_request_model_id&amp;quot;: &amp;quot;haiku&amp;quot;,\n             &amp;quot;ultrafast_request_model_id&amp;quot;: &amp;quot;gpt4o-mini&amp;quot;,\n \n-            &amp;quot;search_model_id&amp;quot;: &amp;quot;perplexity-large&amp;quot;,\n+            &amp;quot;search_model_id&amp;quot;: &amp;quot;perplexity-reasoning-pro&amp;quot;,\n             &amp;quot;urlhelper_model_id&amp;quot;: &amp;quot;haiku35&amp;quot;,\n             &amp;quot;notesgen_model_id&amp;quot;: &amp;quot;gpt4o&amp;quot;,\n             &amp;quot;tracker_gen_model_id&amp;quot;: &amp;quot;haiku35&amp;quot;,\n@@ -56,7 +56,7 @@\n             &amp;quot;name&amp;quot;: &amp;quot;perplexity-small&amp;quot;,\n             &amp;quot;fullname&amp;quot;: &amp;quot;sonar&amp;quot;,\n             &amp;quot;completiontokens&amp;quot;: 8192,\n-            &amp;quot;modeltokens&amp;quot;: 120000,\n+            &amp;quot;modeltokens&amp;quot;: 100000,\n             &amp;quot;temperature&amp;quot;: 0.5\n         },\n         &amp;quot;perplexity-large&amp;quot;: {\n@@ -67,6 +67,22 @@\n             &amp;quot;modeltokens&amp;quot;: 150000,\n             &amp;quot;temperature&amp;quot;: 0.5\n         },\n+        &amp;quot;perplexity-reasoning&amp;quot;: {\n+            &amp;quot;provider&amp;quot;: &amp;quot;Perplexity&amp;quot;,\n+            &amp;quot;name&amp;quot;: &amp;quot;perplexity-reasoning&amp;quot;,\n+            &amp;quot;fullname&amp;quot;: &amp;quot;sonar-reasoning&amp;quot;,\n+            &amp;quot;completiontokens&amp;quot;: 8192,\n+            &amp;quot;modeltokens&amp;quot;: 100000,\n+          ... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>07c4edd538bf628bd8e245408966667eefc5cdc0</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-03T00:15:25</date>
+            <message>Update apollo_enrichment.py\n\nfixed bug in search_apollo_orgs_by_name method</message>
+            <url>https://github.com/Plative/plaito/commit/07c4edd538bf628bd8e245408966667eefc5cdc0</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/integrations/apollo_enrichment.py</filename>
+                    <additions>3</additions>
+                    <deletions>4</deletions>
+                    <changes>7</changes>
+                    <status>modified</status>
+                    <diff>@@ -1809,16 +1809,15 @@ def search_apollo_orgs_by_name(search_term: str) -&amp;gt; list:\n                 if &amp;quot;organizations&amp;quot; in response_json and len(response_json[&amp;quot;organizations&amp;quot;])&amp;gt;0:\n                     org_data = response_json[&amp;quot;organizations&amp;quot;]\n \n-                    # remove unnecessary fields from org data\n+                    # remove unnecessary fields from each org in org_data\n                     keys_to_remove = [&amp;#x27;industry_tag_hash&amp;#x27;, &amp;#x27;industry_tag_id&amp;#x27;, &amp;#x27;intent_signal_account&amp;#x27;, &amp;#x27;intent_strength&amp;#x27;]\n-                    for key in keys_to_remove:\n-                        org_data.pop(key, None)\n+                    [org.pop(key, None) for org in org_data for key in keys_to_remove]\n \n                     return org_data\n                 else :\n                     PlaitoTools.print_debug(f&amp;quot;   &amp;gt;&amp;gt;&amp;gt; INFO: ApolloEnrichment.search_apollo_orgs_by_name() - No organizations found for search term {search_term}&amp;quot;)\n                     return []\n-        except requests.exceptions.RequestException a... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>2f186d887ed27b097eac599b417b35c3896a1c38</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T23:56:33</date>
+            <message>Update slash_sf.py\n\nminor, cosmetic -- improved slack message stating plaito has been grounded with contract(s)</message>
+            <url>https://github.com/Plative/plaito/commit/2f186d887ed27b097eac599b417b35c3896a1c38</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/slash_commands/slash_sf.py</filename>
+                    <additions>5</additions>
+                    <deletions>4</deletions>
+                    <changes>9</changes>
+                    <status>modified</status>
+                    <diff>@@ -1674,15 +1674,16 @@ def get_contracts(self, record_type: str, record_id: str, record_name: str):\n         del google_drive\n \n         # if no contracts found, then print an error and return None\n-        if not contract_text or len(contract_text) == 0:\n+        if not contract_text or len(contract_text) == 0 or (not MSA_filename and not SOWPOW_filename):\n             message = f&amp;quot;Sorry, could not retrieve contracts.\n\nMake sure the *`MSA Link`* and *`SOW/POW/CO Link`* fields on the corresponding Opportunity record are pointing to the right PDFs on Google Drive.\n\nReport the issue to the #plaito support channel if you need assistance.&amp;quot;\n             self.slack_helper.post_slack_block(channel_id=self.channel_id, ts=self.thread_ts, message=message, user_id=self.user_id)\n             return\n \n         # create the message blocks\n-        message = f&amp;quot;*Plaito has been grounded with the following contracts:*\n&amp;quot;\n-        message += f&amp;quot;*`MSA:`* &amp;lt;{MSA_url}|{PlaitoTools.clean_url_text_for_slac... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>dcdf47833723b718b42be8fa08cadfaaf905b17b</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T23:53:47</date>
+            <message>Update sfhandler.py\n\nadded quotes around MSA and SOW/POW filename and url in prompt context</message>
+            <url>https://github.com/Plative/plaito/commit/dcdf47833723b718b42be8fa08cadfaaf905b17b</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/sfhandler.py</filename>
+                    <additions>8</additions>
+                    <deletions>6</deletions>
+                    <changes>14</changes>
+                    <status>modified</status>
+                    <diff>@@ -1047,15 +1047,17 @@ def get_contracts_for_project_or_opportunity(self, google_drive: GoogleDrive, re\n             contract_text = &amp;quot;&amp;quot;\n             if msa_link:\n                 msa_text, msa_file_info = google_drive.find_and_get_text_from_gdrive_url(search_terms=[&amp;#x27;MSA&amp;#x27;, &amp;#x27;Master&amp;#x27;], gdrive_url=msa_link, search_mimetype=&amp;#x27;application/pdf&amp;#x27;)\n-                MSA_filename = msa_file_info[&amp;#x27;name&amp;#x27;]\n-                MSA_url = f&amp;quot;https://drive.google.com/file/d/{msa_file_info[&amp;#x27;id&amp;#x27;]}/view&amp;quot;\n-                contract_text += f&amp;quot;&amp;lt;MSA filename={MSA_filename}, url={MSA_url}&amp;gt;\n{msa_text}\n&amp;lt;/MSA&amp;gt;\n\n\n&amp;quot;\n+                if msa_file_info:\n+                    MSA_filename = msa_file_info[&amp;#x27;name&amp;#x27;]\n+                    MSA_url = f&amp;quot;https://drive.google.com/file/d/{msa_file_info[&amp;#x27;id&amp;#x27;]}/view&amp;quot;\n+                    contract_text += f&amp;quot;&amp;lt;MSA filename=\&amp;quot;{MSA_filename}\&amp;quot;, url=\&amp;quot;{MSA_url}\&amp;quot;&amp;gt;\n{msa_text}\n&amp;lt;/MSA&amp;gt;\n\n\n&amp;quot;\n                 \n             if sowpow_link:\n                 sowpow_text, sowpow_file_info = google... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>2908f6ccaaab418313f9ca2c0937f90f18eaf295</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T23:35:24</date>
+            <message>Update main.py\n\nupdated assistant feature to supress project/opportunity buttons if they&amp;#x27;re already displayed for the channel in context</message>
+            <url>https://github.com/Plative/plaito/commit/2908f6ccaaab418313f9ca2c0937f90f18eaf295</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/main.py</filename>
+                    <additions>12</additions>
+                    <deletions>1</deletions>
+                    <changes>13</changes>
+                    <status>modified</status>
+                    <diff>@@ -1423,7 +1423,7 @@ def process_slack_request(request_type, payload):\n \n         user_id = payload.get(&amp;#x27;event&amp;#x27;, {}).get(&amp;#x27;assistant_thread&amp;#x27;, {}).get(&amp;#x27;user_id&amp;#x27;)\n \n-        # get the source channel id that&amp;#x27;s associated with the assistant thread\n+        # get the id of the contextual channel. This is the channel next to which the assistant was brought up.\n         channel_id = payload.get(&amp;#x27;event&amp;#x27;, {}).get(&amp;#x27;assistant_thread&amp;#x27;, {}).get(&amp;#x27;context&amp;#x27;, {}).get(&amp;#x27;channel_id&amp;#x27;)\n \n         # get the target channel and thread to post responses to -- this is the IM with the assistant\n@@ -1463,6 +1463,17 @@ def process_slack_request(request_type, payload):\n         if entity_id is None:\n             return\n         else:\n+\n+            # see what the last message was in the response_channel_id and if it was already a grounding message for the same record, then don&amp;#x27;t do anything\n+            response = client.conversations_replies(\n+                channel=response_channel_id, \n+                ts=respon... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>8c079a718ff799b12a4c2d2448e8f8627b3db169</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T23:34:24</date>
+            <message>Update slash_sf.py\n\ncosmetic: improved error message/instructions when contracts not found by Contracts button on projects/opportunities</message>
+            <url>https://github.com/Plative/plaito/commit/8c079a718ff799b12a4c2d2448e8f8627b3db169</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/slash_commands/slash_sf.py</filename>
+                    <additions>1</additions>
+                    <deletions>1</deletions>
+                    <changes>2</changes>
+                    <status>modified</status>
+                    <diff>@@ -1675,7 +1675,7 @@ def get_contracts(self, record_type: str, record_id: str, record_name: str):\n \n         # if no contracts found, then print an error and return None\n         if not contract_text or len(contract_text) == 0:\n-            message = f&amp;quot;Sorry, could not retrieve contracts for this {self.sf_objects[record_type][&amp;#x27;display_name_singular&amp;#x27;].lower()}. Make sure the `MSA Link` and `SOW/POW/CO Link` fields on the corresponding Opportunity record are pointing to the right PDFs on Google Drive. Report the issue to the #plaito support channel if you need assistance.&amp;quot;\n+            message = f&amp;quot;Sorry, could not retrieve contracts.\n\nMake sure the *`MSA Link`* and *`SOW/POW/CO Link`* fields on the corresponding Opportunity record are pointing to the right PDFs on Google Drive.\n\nReport the issue to the #plaito support channel if you need assistance.&amp;quot;\n             self.slack_helper.post_slack_block(channel_id=self.channel_id, ts=self.thread_ts, message=message, user_id=self.user_id)\n... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>2e2089b99846e9d8b83e0d050f550e8f15f31fc4</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T19:32:32</date>
+            <message>Update slash_sf.py\n\nminor cosmetic update to error message</message>
+            <url>https://github.com/Plative/plaito/commit/2e2089b99846e9d8b83e0d050f550e8f15f31fc4</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/slash_commands/slash_sf.py</filename>
+                    <additions>1</additions>
+                    <deletions>1</deletions>
+                    <changes>2</changes>
+                    <status>modified</status>
+                    <diff>@@ -1675,7 +1675,7 @@ def get_contracts(self, record_type: str, record_id: str, record_name: str):\n \n         # if no contracts found, then print an error and return None\n         if not contract_text or len(contract_text) == 0:\n-            message = f&amp;quot;Sorry, could not retrieve contracts for this {self.sf_objects[record_type][&amp;#x27;display_name_singular&amp;#x27;].lower()}. Make sure the `MSA Link` and `SOW/POW/CO Link` fields on the corresponding Opportunity record is pointing to the right PDFs on Google Drive. Report the issue to the #plaito support channel if you need assistance.&amp;quot;\n+            message = f&amp;quot;Sorry, could not retrieve contracts for this {self.sf_objects[record_type][&amp;#x27;display_name_singular&amp;#x27;].lower()}. Make sure the `MSA Link` and `SOW/POW/CO Link` fields on the corresponding Opportunity record are pointing to the right PDFs on Google Drive. Report the issue to the #plaito support channel if you need assistance.&amp;quot;\n             self.slack_helper.post_slack_block(channel_id=self.channel_... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>4d5c58464a30f285b8563c596ec92f9236c6e56a</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T19:28:46</date>
+            <message>Update sfhandler.py\n\nupdated the name filter we use to search for MSAs on google drive</message>
+            <url>https://github.com/Plative/plaito/commit/4d5c58464a30f285b8563c596ec92f9236c6e56a</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/sfhandler.py</filename>
+                    <additions>1</additions>
+                    <deletions>1</deletions>
+                    <changes>2</changes>
+                    <status>modified</status>
+                    <diff>@@ -1046,7 +1046,7 @@ def get_contracts_for_project_or_opportunity(self, google_drive: GoogleDrive, re\n \n             contract_text = &amp;quot;&amp;quot;\n             if msa_link:\n-                msa_text, msa_file_info = google_drive.find_and_get_text_from_gdrive_url(search_terms=[&amp;#x27;MSA&amp;#x27;, &amp;#x27;Master Services Agreement&amp;#x27;, &amp;#x27;Master Service Agreement&amp;#x27;], gdrive_url=msa_link, search_mimetype=&amp;#x27;application/pdf&amp;#x27;)\n+                msa_text, msa_file_info = google_drive.find_and_get_text_from_gdrive_url(search_terms=[&amp;#x27;MSA&amp;#x27;, &amp;#x27;Master&amp;#x27;], gdrive_url=msa_link, search_mimetype=&amp;#x27;application/pdf&amp;#x27;)\n                 MSA_filename = msa_file_info[&amp;#x27;name&amp;#x27;]\n                 MSA_url = f&amp;quot;https://drive.google.com/file/d/{msa_file_info[&amp;#x27;id&amp;#x27;]}/view&amp;quot;\n                 contract_text += f&amp;quot;&amp;lt;MSA filename={MSA_filename}, url={MSA_url}&amp;gt;\n{msa_text}\n&amp;lt;/MSA&amp;gt;\n\n\n&amp;quot;</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>f95e401a60df856dea92c3b14822f4ff00f611b6</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T19:24:34</date>
+            <message>Update slash_sf.py\n\nupdated Contracts button error message to be more informative when no contracts are found.</message>
+            <url>https://github.com/Plative/plaito/commit/f95e401a60df856dea92c3b14822f4ff00f611b6</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/slash_commands/slash_sf.py</filename>
+                    <additions>1</additions>
+                    <deletions>1</deletions>
+                    <changes>2</changes>
+                    <status>modified</status>
+                    <diff>@@ -1675,7 +1675,7 @@ def get_contracts(self, record_type: str, record_id: str, record_name: str):\n \n         # if no contracts found, then print an error and return None\n         if not contract_text or len(contract_text) == 0:\n-            message = f&amp;quot;Sorry, could not retrieve contracts for this {self.sf_objects[record_type][&amp;#x27;display_name_singular&amp;#x27;].lower()}. Report the issue to the #plaito support channel if you need assistance.&amp;quot;\n+            message = f&amp;quot;Sorry, could not retrieve contracts for this {self.sf_objects[record_type][&amp;#x27;display_name_singular&amp;#x27;].lower()}. Make sure the `MSA Link` and `SOW/POW/CO Link` fields on the corresponding Opportunity record is pointing to the right PDFs on Google Drive. Report the issue to the #plaito support channel if you need assistance.&amp;quot;\n             self.slack_helper.post_slack_block(channel_id=self.channel_id, ts=self.thread_ts, message=message, user_id=self.user_id)\n             return\n </diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>723d986b0d516aab8daa21ca3625cbe61cf9b658</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T19:08:58</date>
+            <message>Update plaito_config.json\n\nadded gpto3-mini and replaced gpto1-mini with gpto3-mini for code review as it&amp;#x27;s better and cheaper and has similar latency</message>
+            <url>https://github.com/Plative/plaito/commit/723d986b0d516aab8daa21ca3625cbe61cf9b658</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/plaito_config.json</filename>
+                    <additions>10</additions>
+                    <deletions>1</deletions>
+                    <changes>11</changes>
+                    <status>modified</status>
+                    <diff>@@ -16,7 +16,7 @@\n             &amp;quot;smartest_model_id&amp;quot;: &amp;quot;gpt4o&amp;quot;,\n             &amp;quot;default_model_id&amp;quot;: &amp;quot;gpt4o-mini&amp;quot;,\n             &amp;quot;default_endpoint_model_id&amp;quot;: &amp;quot;haiku&amp;quot;,\n-            &amp;quot;code_review_model_id&amp;quot;: &amp;quot;gpto1-mini&amp;quot;,\n+            &amp;quot;code_review_model_id&amp;quot;: &amp;quot;gpto3-mini&amp;quot;,\n             &amp;quot;med_request_model_id&amp;quot;: &amp;quot;haiku35&amp;quot;,\n             &amp;quot;large_request_model_id&amp;quot;: &amp;quot;haiku35&amp;quot;,\n             &amp;quot;extralarge_request_model_id&amp;quot;: &amp;quot;haiku35&amp;quot;,\n@@ -141,6 +141,15 @@\n             &amp;quot;temperature&amp;quot;: 1,\n             &amp;quot;system_prompt_allowed&amp;quot;: false\n         },\n+        &amp;quot;gpto3-mini&amp;quot;: {\n+            &amp;quot;provider&amp;quot;: &amp;quot;OpenAI&amp;quot;,\n+            &amp;quot;name&amp;quot;: &amp;quot;gpto3-mini&amp;quot;,\n+            &amp;quot;fullname&amp;quot;: &amp;quot;o3-mini&amp;quot;,\n+            &amp;quot;completiontokens&amp;quot;: 8192,\n+            &amp;quot;modeltokens&amp;quot;: 200000,\n+            &amp;quot;temperature&amp;quot;: 1,\n+            &amp;quot;system_prompt_allowed&amp;quot;: false\n+        },\n         &amp;quot;gpt35t&amp;quot;: {\n             &amp;quot;provider&amp;quot;: &amp;quot;OpenAI&amp;quot;,\n             &amp;quot;name&amp;quot;: &amp;quot;gpt35t&amp;quot;,</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>4731597b947875d11b20a5432aa5357bfea83377</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:58:06</date>
+            <message>Update sfhandler.py\n\nAdded get_contracts_for_project_or_opportunity method to pull SOW/POW and MSA contract text for project or opportunity</message>
+            <url>https://github.com/Plative/plaito/commit/4731597b947875d11b20a5432aa5357bfea83377</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/sfhandler.py</filename>
+                    <additions>61</additions>
+                    <deletions>4</deletions>
+                    <changes>65</changes>
+                    <status>modified</status>
+                    <diff>@@ -4,6 +4,7 @@\n import html\n from datetime import datetime\n import pytz\n+from google_drive import GoogleDrive\n \n # The SalesforceHandler class is designed to interact with the Salesforce API.\n # It provides methods for setting up the connection, authenticating, and\n@@ -837,7 +838,6 @@ def run_soql(self, soql_query: str, get_all_records: bool=False) -&amp;gt; dict:\n         try:\n             record_data = requests.request(&amp;quot;GET&amp;quot;, query_url, headers=headers, params={&amp;#x27;q&amp;#x27;: soql_query})\n             record_data_json = record_data.json()\n-            #PlaitoTools.print_debug(f&amp;quot;&amp;gt;&amp;gt; Retrieved {len(record_data_json[&amp;#x27;records&amp;#x27;])} records&amp;quot;)\n             \n             if get_all_records:\n                 while record_data_json.get(&amp;quot;nextRecordsUrl&amp;quot;) != None:\n@@ -901,10 +901,19 @@ def lookup_info_by_field(self, sf_object_name, lookup_field, lookup_value, retur\n         record_data_json = self.run_soql(soql_query)\n \n         # Return the value of the return_field\n-        if record_data_json[&amp;#x27;totalSize&amp;#x27;] == 0... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>8a05947024b744a1db2cfcf1ccca739c4b2ea75a</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:56:17</date>
+            <message>Update proxycurl_enrichment.py\n\n* Moved db config from instance to class variables
+\n* Added LinkedIn profile caching for both org and person profiles</message>
+            <url>https://github.com/Plative/plaito/commit/8a05947024b744a1db2cfcf1ccca739c4b2ea75a</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/integrations/proxycurl_enrichment.py</filename>
+                    <additions>122</additions>
+                    <deletions>12</deletions>
+                    <changes>134</changes>
+                    <status>modified</status>
+                    <diff>@@ -1,11 +1,31 @@\n import requests, json, os, time\n from plaitotools import PlaitoTools\n from brd import GitHubClient\n+from dbhandler import DBHandler\n \n class ProxyCurlEnrichment:\n     &amp;quot;&amp;quot;&amp;quot;\n     This class is used to interact with the ProxyCurl API to get linkedin profile information.\n     &amp;quot;&amp;quot;&amp;quot;\n+\n+    with open(&amp;#x27;plaito_config.json&amp;#x27;, &amp;#x27;r&amp;#x27;) as f:\n+\n+        config = json.load(f)\n+\n+        # Load the MySql config\n+        db_name = config[&amp;#x27;plaito_db&amp;#x27;][&amp;#x27;db&amp;#x27;]\n+        db_config = {\n+            &amp;quot;host&amp;quot;: os.getenv(&amp;quot;MYSQL_PLAITODB_HOST&amp;quot;),\n+            &amp;quot;port&amp;quot;: os.getenv(&amp;quot;MYSQL_PLAITODB_PORT&amp;quot;),\n+            &amp;quot;user&amp;quot;: os.getenv(&amp;quot;MYSQL_USER&amp;quot;),\n+            &amp;quot;password&amp;quot;: os.getenv(&amp;quot;MYSQL_PASSWORD&amp;quot;)\n+        }\n+\n+    f.close()\n+\n+\n+\n+\n     def __init__(self):\n         self.api_key = os.getenv(&amp;quot;PROXYCURL_API_KEY&amp;quot;)\n         self.base_url = &amp;quot;https://nubela.co/proxycurl&amp;quot;\n@@ -77,9 +97,37 @@ def extract_linkedin_url(url):\n         else:\n             # if it&amp;#x27;s not a linkedin url, then return None\n             r... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>70597bc3210c782e3176ac81ba224c77af9e8ca9</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:54:20</date>
+            <message>Update dbhandler.py\n\nminor debug message update</message>
+            <url>https://github.com/Plative/plaito/commit/70597bc3210c782e3176ac81ba224c77af9e8ca9</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/dbhandler.py</filename>
+                    <additions>1</additions>
+                    <deletions>1</deletions>
+                    <changes>2</changes>
+                    <status>modified</status>
+                    <diff>@@ -102,7 +102,7 @@ def insert_record(self, insert_query, data):\n             return self.cursor.lastrowid\n \n         except Exception as e:\n-            PlaitoTools.print_debug(f&amp;quot;ERROR: Unable to insert records into db: {e}&amp;quot;)\n+            PlaitoTools.print_debug(f&amp;quot;ERROR: Unable to insert records into db. INSERT_QUERY={insert_query} ERROR={e}&amp;quot;)\n \n     def delete_record(self, delete_query):\n         &amp;quot;&amp;quot;&amp;quot;</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>4e115e65942576a1180fe0eb4b37c68341b69a0d</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:53:11</date>
+            <message>Update apollo_enrichment.py\n\n* Moved config from instance to class variables (e.g. db config, max_tries, retry_wait_factor
+\n* Updated Apollo api endpoints from https://api.apollo.io/v1 to https://api.apollo.io/api/v1 
+\n* Added search_apollo_orgs_by_name method
+\n* Added org caching with cache_apollo_org_data and get_cached_apollo_org_data methods</message>
+            <url>https://github.com/Plative/plaito/commit/4e115e65942576a1180fe0eb4b37c68341b69a0d</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/integrations/apollo_enrichment.py</filename>
+                    <additions>354</additions>
+                    <deletions>192</deletions>
+                    <changes>546</changes>
+                    <status>modified</status>
+                    <diff>@@ -17,6 +17,41 @@ class ApolloEnrichment:\n     # Get the Apollo API key from the environment\n     API_KEY = os.environ.get(&amp;quot;APOLLO_API_KEY&amp;quot;)\n \n+    # Initialize class variables\n+    with open(&amp;#x27;plaito_config.json&amp;#x27;, &amp;#x27;r&amp;#x27;) as f:\n+\n+        config = json.load(f)\n+\n+        # max_api_retries defines how many times an rest api call should be tried including initial call and retries\n+        max_tries = int(config[&amp;quot;max_api_retries&amp;quot;]) \n+\n+        # api_retry_wait_factor indicates wait time between retries. 1.5 means wew should wait 10*retry_counter**1.5 seconds between retries\n+        retry_wait_factor = float(config[&amp;quot;api_retry_wait_factor&amp;quot;]) \n+\n+        # Load the Apollo config\n+        apollo_config = config[&amp;#x27;apollo&amp;#x27;]\n+\n+        # Load the MySql config\n+        db_name = config[&amp;#x27;plaito_db&amp;#x27;][&amp;#x27;db&amp;#x27;]\n+        db_config = {\n+            &amp;quot;host&amp;quot;: os.getenv(&amp;quot;MYSQL_PLAITODB_HOST&amp;quot;),\n+            &amp;quot;port&amp;quot;: os.getenv(&amp;quot;MYSQL_PLAITODB_PORT&amp;quot;),\n+            &amp;quot;user&amp;quot;: os.getenv(&amp;quot;MYSQL_USER&amp;quot;),\n+            &amp;quot;pass... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>ebae2d2ee399d3c5c259ee9cb5de0b910302a815</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:48:28</date>
+            <message>Update plaito_endpoints.py\n\nAdded get_apollo_company_profile and search_apollo_companies_by_name endpoint functions</message>
+            <url>https://github.com/Plative/plaito/commit/ebae2d2ee399d3c5c259ee9cb5de0b910302a815</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/endpoints/plaito_endpoints.py</filename>
+                    <additions>101</additions>
+                    <deletions>0</deletions>
+                    <changes>101</changes>
+                    <status>modified</status>
+                    <diff>@@ -14,6 +14,8 @@\n from tableauhandler import TableauHandler\n from flask import make_response\n from brd import GitHubClient\n+from integrations.apollo_enrichment import ApolloEnrichment\n+from integrations.proxycurl_enrichment import ProxyCurlEnrichment\n \n class PlaitoEndpoints:\n     def __init__(self, endpoint, request):\n@@ -1929,3 +1931,102 @@ def get_project_chart(self):\n             &amp;quot;chart_url&amp;quot;: image_url\n         }\n \n+    def get_apollo_company_profile(self):\n+        &amp;quot;&amp;quot;&amp;quot;\n+        Given an Apollo organization ID or url domain, retrieves company profile from Apollo, and then if a linkedin url is available in the Apollo data, then also retrieves the company&amp;#x27;s LinkedIn profile from nubela.co aka ProxyCurl\n+\n+        Inputs: \n+        must have one of the following:\n+        - organization_id (str): The Apollo organization_id for the company to retrieve the profile.\n+        - domain (str): The domain for the company to retrieve the profile.\n+        - return_apollo (bool): Optional - I... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>0e3a008a750f2ae2650766862e1419b97ab10053</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:47:29</date>
+            <message>Update endpoints_config.json\n\nadded creds for pl1730479762151.lightning.force.com (agentforce demo org)</message>
+            <url>https://github.com/Plative/plaito/commit/0e3a008a750f2ae2650766862e1419b97ab10053</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/endpoints/endpoints_config.json</filename>
+                    <additions>2</additions>
+                    <deletions>1</deletions>
+                    <changes>3</changes>
+                    <status>modified</status>
+                    <diff>@@ -21,7 +21,8 @@\n         &amp;quot;salesforce&amp;quot;: {\n             &amp;quot;plative.my.salesforce.com&amp;quot;: &amp;quot;3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f3a4b5c&amp;quot;,\n             &amp;quot;plative--fullcopy.sandbox.my.salesforce.com&amp;quot;: &amp;quot;1a2b3c4d5e6f7g8h9i0j1k2l3m4n5o6p7q8r9s0t1u2v3w4x5y6z&amp;quot;,\n-            &amp;quot;plative--partial.sandbox.my.salesforce.com&amp;quot;: &amp;quot;9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b&amp;quot;\n+            &amp;quot;plative--partial.sandbox.my.salesforce.com&amp;quot;: &amp;quot;9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b&amp;quot;,\n+            &amp;quot;pl1730479762151.lightning.force.com&amp;quot;: &amp;quot;9e8f7a6b5c4d3e2f1a0b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b&amp;quot;\n         },\n \n         &amp;quot;teams_dev&amp;quot;: {</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>0eac854aac9e8aa9c707d2085e52b1abe3c6edea</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:46:31</date>
+            <message>Update notesgenerator.py\n\nMoved gdrive_files_get and drive_files_list to GoogleDrive class</message>
+            <url>https://github.com/Plative/plaito/commit/0eac854aac9e8aa9c707d2085e52b1abe3c6edea</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/notesgenerator.py</filename>
+                    <additions>14</additions>
+                    <deletions>13</deletions>
+                    <changes>27</changes>
+                    <status>modified</status>
+                    <diff>@@ -28,6 +28,7 @@\n from sfhandler import SalesforceHandler\n \n from llm_query import LLMQuery\n+from google_drive import GoogleDrive\n \n class NotesGenerator:\n     &amp;quot;&amp;quot;&amp;quot;\n@@ -260,7 +261,7 @@ def publish_notes_from_transcript(self, drive_service, docs_service, cal_service\n             # Get the meeting title from the transcript file name. Google Meet transcripts are named in the format:\n             #   e.g. &amp;quot;NS Jira/Agile Pilot Huddle (2023-04-28 16:37 GMT-4) - Transcript&amp;quot;\n             # Uses Google Drive API: https://googleapis.github.io/google-api-python-client/docs/dyn/drive_v3.files#get\n-            file_info = self.gdrive_files_get(drive_service=drive_service, file_id=file_id, fields=&amp;#x27;createdTime, name&amp;#x27;) \n+            file_info = GoogleDrive.gdrive_files_get(drive_service=drive_service, file_id=file_id, fields=&amp;#x27;createdTime, name&amp;#x27;) \n \n             # Check if the file_id already exists in the file list. If it does, return None for all return values.\n             # Otherwise, add the file_... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>46f7035575e2a83fb4b94725784e3eacfedd19c9</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:45:04</date>
+            <message>Update slash_sf.py\n\nadded get_contracts() method to set SOW/POW and MSA text into context for slash_sf Contracts button</message>
+            <url>https://github.com/Plative/plaito/commit/46f7035575e2a83fb4b94725784e3eacfedd19c9</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/slash_commands/slash_sf.py</filename>
+                    <additions>32</additions>
+                    <deletions>0</deletions>
+                    <changes>32</changes>
+                    <status>modified</status>
+                    <diff>@@ -1662,3 +1662,35 @@ def load_plaito_home(self, loading_message: str = None):\n         except SlackApiError as e:\n             PlaitoTools.print_debug(f&amp;quot;ERROR: Could not load plaito home user={self.user_email} {e.response[&amp;#x27;error&amp;#x27;]}&amp;quot;)\n             return\n+\n+    def get_contracts(self, record_type: str, record_id: str, record_name: str):\n+        &amp;quot;&amp;quot;&amp;quot;\n+        This function retrieves contract text and puts them into context\n+        &amp;quot;&amp;quot;&amp;quot;\n+\n+        # get the contract records from Salesforce\n+        google_drive = GoogleDrive(user_email = self.user_email)\n+        contract_text, MSA_filename, MSA_url, SOWPOW_filename, SOWPOW_url = self.sfclient.get_contracts_for_project_or_opportunity(google_drive=google_drive, record_type=record_type, record_id=record_id)\n+        del google_drive\n+\n+        # if no contracts found, then print an error and return None\n+        if not contract_text or len(contract_text) == 0:\n+            message = f&amp;quot;Sorry, could not retrieve contracts for this {self.sf_... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>4ca2198b485dd60ffebd6b5cb7b832d075665709</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:43:11</date>
+            <message>Update main.py\n\n* Added Contracts button support on slash_sf
+\n* cleanup: removed old gsearch code prior to moving to perplexity
+\n* Added endpoints search_apollo_companies_by_name and get_apollo_company_profile</message>
+            <url>https://github.com/Plative/plaito/commit/4ca2198b485dd60ffebd6b5cb7b832d075665709</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/main.py</filename>
+                    <additions>7</additions>
+                    <deletions>39</deletions>
+                    <changes>46</changes>
+                    <status>modified</status>
+                    <diff>@@ -2302,8 +2302,12 @@ def process_slack_request(request_type, payload):\n                     blocks=blocks\n                 )\n \n+            # Fetch and analyze MSA and SOW/POW referenced in the project/opportunity if the user selected the Contracts button\n+            if button_label == &amp;quot;Contracts&amp;quot;:\n+                slash_sf.get_contracts(record_type=sf_record_type, record_id=sf_record_id, record_name=sf_record_name)\n+\n             # Fetch and analyze time log data and put it into context if the user selected the Time Logs button\n-            if button_label == &amp;quot;Time Logs&amp;quot;:\n+            elif button_label == &amp;quot;Time Logs&amp;quot;:\n                 slash_sf.get_project_time_logs(record_type = sf_record_type, project_id=sf_record_id)\n \n             # Fetch and analyze account meeting sentiment from tableau if the user selected the sentiment button\n@@ -2782,44 +2786,6 @@ def get_project_financials(button_label, sf_record_name, sf_record_id, channel_i\n         query_result = LLMQuery.basic_chat_com... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>a034f8287f7752326fea5abca55dbc9f7f793e34</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:40:53</date>
+            <message>Update plaitotools.py\n\nadded clean_url_text_for_slack() method to replace &amp;gt;, &amp;lt; and _ chars from text to make them render better for slack output</message>
+            <url>https://github.com/Plative/plaito/commit/a034f8287f7752326fea5abca55dbc9f7f793e34</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/plaitotools.py</filename>
+                    <additions>8</additions>
+                    <deletions>0</deletions>
+                    <changes>8</changes>
+                    <status>modified</status>
+                    <diff>@@ -1134,3 +1134,11 @@ def replace_less_than_greater_than(text):\n         &amp;quot;&amp;quot;&amp;quot;\n \n         return text.replace(&amp;#x27;&amp;gt;&amp;#x27;,&amp;#x27;\u00BB&amp;#x27;).replace(&amp;#x27;&amp;lt;&amp;#x27;, &amp;#x27;\u00AB&amp;#x27;)\n+\n+    @staticmethod\n+    def clean_url_text_for_slack(text):\n+        &amp;quot;&amp;quot;&amp;quot;\n+        Replace _, &amp;gt; and &amp;lt; characters with similar looking unicode characters. This is needed when we want to post some text to slack with _ characters without slack interpreting them as italics \n+        &amp;quot;&amp;quot;&amp;quot;\n+\n+        return text.replace(&amp;#x27;_&amp;#x27;,&amp;#x27;\u0332 &amp;#x27;).replace(&amp;#x27;&amp;gt;&amp;#x27;,&amp;#x27;\u00BB&amp;#x27;).replace(&amp;#x27;&amp;lt;&amp;#x27;, &amp;#x27;\u00AB&amp;#x27;)</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>ef52eca06c955f0f6c774ba8d3b7911af1390a15</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:40:02</date>
+            <message>Update google_gcal.py\n\ncleanup: removed deprecated_view_contact_profile() method</message>
+            <url>https://github.com/Plative/plaito/commit/ef52eca06c955f0f6c774ba8d3b7911af1390a15</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/slash_commands/google_gcal.py</filename>
+                    <additions>1</additions>
+                    <deletions>133</deletions>
+                    <changes>134</changes>
+                    <status>modified</status>
+                    <diff>@@ -535,142 +535,10 @@ def view_gcal(self):\n         except Exception as e:\n             PlaitoTools.print_debug(f&amp;quot;ERROR: {e}&amp;quot;)\n \n-    #DEPRECATED\n-    def deprecated_view_contact_profile(self, contact_email: str): \n-        &amp;quot;&amp;quot;&amp;quot;\n-        View the profile for the given contact email address in slack\n-        &amp;quot;&amp;quot;&amp;quot;\n-\n-        try:\n-\n-            &amp;quot;&amp;quot;&amp;quot;\n-            STEP 1: Retrieve the contact profile from Apollo Enrichment and Salesforce \n-            &amp;quot;&amp;quot;&amp;quot;\n-\n-            # first run the apollo enrichment to get the account data for the attendees\n-            attendee_emails = [contact_email]\n-            apollo_enrichment = ApolloEnrichment(emails=attendee_emails, sfclient=self.sfclient, user_email=self.user_email, payload=self.payload, slack_helper=self.slack_helper)\n-\n-            # get the attendee data from apollo enrichment object\n-            attendee = apollo_enrichment.people_data[0]\n-\n-\n-            # get the list of unique accounts from the apollo enrichment object\n-            acct... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>9c09de7cc9925bcbf7a688390283b36128295e01</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:39:13</date>
+            <message>Update slash_sf_config.json\n\n* removed Invoices button from Project object
+\n* added Contracts button to both Opportunity and Project objects</message>
+            <url>https://github.com/Plative/plaito/commit/9c09de7cc9925bcbf7a688390283b36128295e01</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/slash_commands/slash_sf_config.json</filename>
+                    <additions>2</additions>
+                    <deletions>4</deletions>
+                    <changes>6</changes>
+                    <status>modified</status>
+                    <diff>@@ -70,6 +70,7 @@\n         &amp;quot;Status&amp;quot;: &amp;quot;Summarize the status of the opportunity, mutual action plan, next steps and deal milestones.&amp;quot;,\n         &amp;quot;M.A.P.&amp;quot;: &amp;quot;Summarize the current mutual action plan and next steps as documented on this opportunity record, as well as any recommendations you have for next steps to get this deal to close&amp;quot;,\n         &amp;quot;Assumptions&amp;quot;: &amp;quot;Summarize the key assumptions for this opportunity as documented on the opportunity record and the product line items, as well as any recommendations you have for additional assumptions we should document.&amp;quot;,\n+        &amp;quot;Contracts&amp;quot;: &amp;quot;Please load latest signed MSA and SOW/POW documents for this opportunity&amp;quot;,\n         &amp;quot;Risks&amp;quot;: &amp;quot;Analyze the synopsis, scope and assumptions fields on this opportunity record as well as all the Product Line Items, and identify any potential delivery or financial risks we should watch out for.&amp;quot;,\n         &amp;quot;Sentiment&amp;quot;: &amp;quot;{Account.Name}&amp;quot;,\n         &amp;quot;Meetings&amp;quot;: &amp;quot;{AccountId}&amp;quot;,\n@@ -281,8 +282,6 @@\n             }\n      ... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+        <commit>
+            <sha>81fcbb790a21384e5d476a6b50474bf62854a6a8</sha>
+            <author>Miftah Plative</author>
+            <date>2025-02-02T18:38:14</date>
+            <message>Update google_drive.py\n\n* Added default values for gdrive_files_get fields input
+\n* Moved drive_files_list() function from notesgen to GoogleDrive class as a static method
+\n* Added find_and_get_text_from_gdrive_url() method to assist in finding and returning text from project &amp;amp; opportunity contracts (MSA/SOW)</message>
+            <url>https://github.com/Plative/plaito/commit/81fcbb790a21384e5d476a6b50474bf62854a6a8</url>
+            <files_changed>
+                <file>
+                    <filename>plaito/google_drive.py</filename>
+                    <additions>86</additions>
+                    <deletions>18</deletions>
+                    <changes>104</changes>
+                    <status>modified</status>
+                    <diff>@@ -40,7 +40,6 @@ class GoogleDrive:\n \n         f.close()\n \n-\n     def __init__(self, user_email=&amp;quot;plaito@plative.com&amp;quot;):\n         print(f&amp;quot;INFO: GoogleDrive: Initializing GoogleDrive for user_email: {user_email}&amp;quot;)\n         self.user_email = user_email\n@@ -63,7 +62,6 @@ def load_config(self):\n         self.GOOGLE_API_KEY = os.environ.get(&amp;#x27;GOOGLE_API_KEY&amp;#x27;)\n         self.SMARTPROXY_URL = os.environ.get(&amp;#x27;SMARTPROXY_URL&amp;#x27;)\n \n-\n     def get_plaito_gservices(self):\n         &amp;quot;&amp;quot;&amp;quot;\n         Returns the doc and drive service using the API credentials for plaito@plative.com\n@@ -99,8 +97,6 @@ def get_plaito_gservices(self):\n         self.sheet_service=sheet_service\n         self.creds=creds\n \n-\n-    \n     def get_text_from_gslide_or_gdoc(self, doc_url=None, doc_id=None):\n         &amp;quot;&amp;quot;&amp;quot;\n         Given a doc url, get text from a google doc\n@@ -207,10 +203,6 @@ def get_text_from_pptx(self, doc_url=None, doc_id=None):\n             PlaitoTools.print_debug(f&amp;quot;ERROR: GoogleDrive.get_text_from_pptx: An error occu... [truncated]</diff>
+                </file>
+            </files_changed>
+        </commit>
+    </github_activity>
+    <jira_activity>
+        <issue>
+            <key>KARBON-54</key>
+            <summary>Knowledge Migration - Full Load</summary>
+            <status>Open</status>
+            <updated>2025-02-18T15:08:40.482-0500</updated>
+            <assignee>Roshan Khan</assignee>
+            <url>https://plative.atlassian.net/browse/KARBON-54</url>
+        </issue>
+        <issue>
+            <key>EVR-9</key>
+            <summary>Custom Fields 1 - Create custom fields discussed internally</summary>
+            <status>Done</status>
+            <updated>2025-02-23T20:21:32.713-0500</updated>
+            <assignee>Roshan Khan</assignee>
+            <url>https://plative.atlassian.net/browse/EVR-9</url>
+        </issue>
+        <issue>
+            <key>EVR-7</key>
+            <summary>Build - SF Order to NS Sales Order and SF Order Line Items to NS Sales Order Integration Flow</summary>
+            <status>Done</status>
+            <updated>2025-02-23T20:21:41.372-0500</updated>
+            <assignee>Roshan Khan</assignee>
+            <url>https://plative.atlassian.net/browse/EVR-7</url>
+        </issue>
+        <issue>
+            <key>EVR-6</key>
+            <summary>Build - SF Product to NS Inventory Item Integration Flow</summary>
+            <status>Done</status>
+            <updated>2025-02-23T20:21:23.947-0500</updated>
+            <assignee>Roshan Khan</assignee>
+            <url>https://plative.atlassian.net/browse/EVR-6</url>
+        </issue>
+    </jira_activity>
+    <gmail_activity/>
+</activity_report>

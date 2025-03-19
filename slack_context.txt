@@ -1,0 +1,273 @@
+<discussion>
+    <topic title="Salesforce Data Cloud Issues">
+        <participants>
+            <participant>@Aaron Pratt</participant>
+            <participant>@Roshan Khan</participant>
+        </participants>
+        <summary>
+            <text>Aaron Pratt and Roshan Khan discuss various issues they are facing with Salesforce Data Cloud, including problems with mapping Salesforce Account data, batch data transforms, and related lists.</text>
+        </summary>
+    </topic>
+
+    <topic title="Salesforce Support and Product Team Involvement">
+        <participants>
+            <participant>@Roshan Khan</participant>
+        </participants>
+        <summary>
+            <text>Roshan Khan provides updates on the support and product team's involvement in resolving the issues they are facing with Salesforce Data Cloud.</text>
+        </summary>
+    </topic>
+
+    <topic title="More details">
+        <participants>
+            <participant>@Roshan Khan</participant>
+            <participant>@Aaron Pratt</participant>
+        </participants>
+        <details>
+            <text>Roshan Khan shares that the support team has escalated the issue to the product team, and a known issue article has been created.</text>
+            <reference link="[4]" />
+        </details>
+        <details>
+            <text>Roshan Khan mentions that the product team is actively working on a solution, and the status can be tracked through the known issue link.</text>
+            <reference link="[4]" />
+        </details>
+        <details>
+            <text>Aaron Pratt comments that the issues seem to be a "quite the bug."</text>
+            <reference link="[5]" />
+        </details>
+    </topic>
+
+    <topic title="Showing Duplicates in Salesforce">
+        <participants>
+            <participant>@Roshan Khan</participant>
+            <participant>@Aaron Pratt</participant>
+        </participants>
+        <summary>
+            <text>Roshan Khan and Aaron Pratt discuss various approaches to showing duplicate contacts in Salesforce, including the limitations of Data Cloud related lists.</text>
+        </summary>
+    </topic>
+
+    <topic title="More details">
+        <participants>
+            <participant>@Roshan Khan</participant>
+        </participants>
+        <details>
+            <text>Roshan Khan explains that they were planning to use batch transformers to create a duplicate contact related list, but found that Data Cloud only permits engagement-type related lists.</text>
+            <reference link="[6]" />
+        </details>
+        <details>
+            <text>Aaron Pratt suggests exploring options to at least indicate that there are likely duplicates, even if the actual duplicates cannot be shown.</text>
+            <reference link="[7]" />
+        </details>
+        <details>
+            <text>Aaron Pratt confirms that Roshan Khan was able to get a report showing which Salesforce records are duplicates.</text>
+            <reference link="[8]" />
+        </details>
+    </topic>
+
+    <topic title="Showing Netsuite Transactions in Salesforce">
+        <participants>
+            <participant>@Roshan Khan</participant>
+            <participant>@Aaron Pratt</participant>
+        </participants>
+        <summary>
+            <text>Roshan Khan and Aaron Pratt discuss the challenges of showing Netsuite transactions on Salesforce records, including issues with related lists and the need to connect the transactions to the Salesforce account ID.</text>
+        </summary>
+    </topic>
+
+    <topic title="More details">
+        <participants>
+            <participant>@Roshan Khan</participant>
+        </participants>
+        <details>
+            <text>Roshan Khan reports that they have been unable to get a response from Salesforce about the issues with showing Netsuite transactions, and have reopened a case.</text>
+            <reference link="[9]" />
+        </details>
+        <details>
+            <text>Roshan Khan shares that the Salesforce support team has indicated that related lists only work when the engagement is connected to the Account's Id, and not the external Id.</text>
+            <reference link="[10]" />
+        </details>
+        <details>
+            <text>Aaron Pratt suggests that the transaction records may need to be stamped with the Salesforce account ID in order to work with the related lists.</text>
+            <reference link="[11]" />
+        </details>
+    </topic>
+
+    <topic title="Fund Balance Alert Use Case">
+        <participants>
+            <participant>@Aaron Pratt</participant>
+            <participant>@Roshan Khan</participant>
+        </participants>
+        <summary>
+            <text>Aaron Pratt and Roshan Khan discuss a potential new use case for Salesforce Data Cloud related to fund balance alerts, and plan for Roshan Khan to provide context on this use case in an upcoming meeting.</text>
+        </summary>
+    </topic>
+
+    <topic title="More details">
+        <participants>
+            <participant>@Aaron Pratt</participant>
+            <participant>@Roshan Khan</participant>
+        </participants>
+        <details>
+            <text>Aaron Pratt suggests identifying methods to show when a value in Data Cloud is too low, as a starting point for the fund balance alert use case.</text>
+            <reference link="[12]" />
+        </details>
+        <details>
+            <text>Aaron Pratt mentions that Roshan Khan has been added to the fin serv sales team meeting next week to provide context on the fund alert use case.</text>
+            <reference link="[13]" />
+        </details>
+        <details>
+            <text>Roshan Khan expresses eagerness to work on the fund alert use case while also addressing the issues with the Netsuite transactions.</text>
+            <reference link="[14]" />
+        </details>
+    </topic>
+
+    <!-- New Topics Added Below -->
+
+    <topic title="Salesforce Issues and Bugs">
+        <summary>
+            <text>The team is dealing with various issues and bugs in Salesforce, including problems with a data stream not refreshing and needing to open a new case with Salesforce.</text>
+        </summary>
+    </topic>
+
+    <topic title="More details">
+        <participants>
+            <participant>@Roshan Khan</participant>
+            <participant>@Aaron Pratt</participant>
+        </participants>
+        <details>
+            <text>Roshan Khan reported having to open another case with Salesforce to deal with a bug in DC (Data Cloud).</text>
+            <reference link="[1]" />
+        </details>
+        <details>
+            <text>Aaron Pratt mentioned issues with the same account data stream not refreshing.</text>
+            <reference link="[2]" />
+        </details>
+        <details>
+            <text>Roshan Khan needed to follow up on a case as they were not seeing the connection between their case and an existing issue.</text>
+            <reference link="[3]" />
+        </details>
+    </topic>
+
+    <topic title="Data Cloud Implementations">
+        <summary>
+            <text>The team is working on leveraging Data Cloud to identify duplicates in contact records and display transactional data from NetSuite on Salesforce Account layouts.</text>
+        </summary>
+    </topic>
+
+    <topic title="More details">
+        <participants>
+            <participant>@Roshan Khan</participant>
+        </participants>
+        <details>
+            <text>Roshan Khan shared that they were able to get an initial version of a LWC (Lightning Web Component) working on the Salesforce Contact page to display duplicate contact information from Data Cloud.</text>
+            <reference link="[4]" />
+        </details>
+        <details>
+            <text>Roshan Khan made UI enhancements to the LWC, including adding direct links back to the original duplicate records.</text>
+            <reference link="[5]" />
+        </details>
+        <details>
+            <text>Roshan Khan developed an initial version using a Dynamic Related List on the Salesforce Account record to display NetSuite transactional data from Data Cloud.</text>
+            <reference link="[6]" />
+        </details>
+    </topic>
+
+    <topic title="Data Cloud Consulting and Training">
+        <summary>
+            <text>The team is celebrating a member passing the Data Cloud consultant exam and announcing a new virtual Data Cloud implementation camp for partners.</text>
+        </summary>
+    </topic>
+
+    <topic title="More details">
+        <participants>
+            <participant>@Sandesh Ghosalkar</participant>
+            <participant>@Aaron Pratt</participant>
+        </participants>
+        <details>
+            <text>Sandesh Ghosalkar announced that they just passed the Data Cloud consultant exam.</text>
+            <reference link="[7]" />
+        </details>
+        <details>
+            <text>Aaron Pratt announced a new virtual Data Cloud Implementation Camp for Partners to help them learn best practices and solve common implementation scenarios.</text>
+            <reference link="[8]" />
+        </details>
+    </topic>
+
+    <topic title="Salesforce Flow Issues">
+        <summary>
+            <text>A team member is having trouble with a Salesforce Flow that is not updating Account records as expected.</text>
+        </summary>
+    </topic>
+
+    <topic title="More details">
+        <participants>
+            <participant>@Roshan Khan</participant>
+            <participant>@Aaron Pratt</participant>
+            <participant>@Sandesh Ghosalkar</participant>
+        </participants>
+        <details>
+            <text>Roshan Khan asked the team for help with a Salesforce Flow they are working on that is not updating Account records as expected.</text>
+            <reference link="[9]" />
+        </details>
+        <details>
+            <text>Aaron Pratt suggested checking for any required fields or validation rules that could be preventing the Account record from saving.</text>
+            <reference link="[10]" />
+        </details>
+        <details>
+            <text>Sandesh Ghosalkar offered to help Roshan Khan with the Salesforce Flow issue.</text>
+            <reference link="[11]" />
+        </details>
+    </topic>
+
+    <topic title="Upcoming Meetings and Assessments">
+        <summary>
+            <text>The team is discussing rescheduling a POC review meeting and an upcoming AI assessment readback.</text>
+        </summary>
+    </topic>
+
+    <topic title="More details">
+        <participants>
+            <participant>@Sandesh Ghosalkar</participant>
+            <participant>@Aaron Pratt</participant>
+            <participant>@Ludzi Bokete</participant>
+        </participants>
+        <details>
+            <text>Sandesh Ghosalkar requested to move up the scheduled POC Review meeting by 30 minutes due to a conflict with a Sparks meeting.</text>
+            <reference link="[12]" />
+        </details>
+        <details>
+            <text>Aaron Pratt was able to accommodate the request and scheduled the POC Review meeting for 12-12:30 pm Eastern on Wednesday.</text>
+            <reference link="[13]" />
+        </details>
+        <details>
+            <text>Ludzi Bokete mentioned they have an AI assessment readback during the scheduled call, so the demo will have to wait until next week.</text>
+            <reference link="[14]" />
+        </details>
+    </topic>
+
+    <topic title="Salesforce Dashboards and Integrations">
+        <summary>
+            <text>The team is discussing building an example EWS (Engagement Workspace) dashboard and the potential cost and benefits of using Data Cloud to bring in read-only records from other systems.</text>
+        </summary>
+    </topic>
+
+    <topic title="More details">
+        <participants>
+            <participant>@Ludzi Bokete</participant>
+            <participant>@Aaron Pratt</participant>
+        </participants>
+        <details>
+            <text>Ludzi Bokete referenced building an example EWS dashboard and looking at dashboards from other tools like Gainsight and Churn Zero to determine the data requirements.</text>
+            <reference link="[15]" />
+        </details>
+        <details>
+            <text>Ludzi Bokete suggested that using Data Cloud to bring in read-only records from other systems could be a great option for integration projects, and that it would be even better if it could be done within the free credits available in Salesforce Enterprise and Unlimited editions.</text>
+            <reference link="[16]" />
+        </details>
+        <details>
+            <text>Aaron Pratt asked where Ludzi Bokete had added the examples of the dashboards they mentioned.</text>
+            <reference link="[17]" />
+        </details>
+    </topic>
+</discussion>
